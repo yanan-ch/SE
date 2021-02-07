@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentPadding="5dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/cardview_shadow_start_color"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Title: "
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="100dp"
+                    android:textSize="30sp"
+                    android:textColor="#3e3e3e"/>
+                <TextView
+                    android:id="@+id/issue_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="test1"
+                    android:layout_marginTop="5dp"
+                    android:textSize="30sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="创建时间:    "
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:id="@+id/issue_create_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="2018-12-11T11:38:01Z"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="问题状态:    "
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:id="@+id/issue_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="open"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="问题描述:    "
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:id="@+id/issue_body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="test111"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#3F51BB"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/back"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp" />
+
+        <ImageButton
+            android:id="@+id/headAdd"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/add"
+            android:layout_marginLeft="130dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="30dp"
+            android:background="#00000000">
+        </ImageButton>
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:context=".DetailActivity"
+        android:layout_weight="2"
+        android:layout_marginTop="30dp">
+
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="英雄名字："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:hint="Hero's Name"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="英雄称号："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_title"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:hint="Hero's Title"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            app:layout_constraintLeft_toRightOf="@+id/title"
+            app:layout_constraintRight_toRightOf="parent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="英雄位置："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_position"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:hint="Hreo's Position"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintLeft_toRightOf="@+id/position"
+            app:layout_constraintRight_toRightOf="parent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/SurvivabilityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="生存能力值："
+            android:textColor="#3e3e3e"
+            app:layout_constraintTop_toBottomOf="@id/position"
+            app:layout_constraintLeft_toLeftOf="parent">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_SurvivabilityValue"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:hint="SurvivabilityValue"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/position"
+            app:layout_constraintLeft_toRightOf="@+id/SurvivabilityValue"
+            app:layout_constraintRight_toRightOf="parent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/AttackDamageValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="攻击伤害值："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivabilityValue">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_AttackDamageValue"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:textSize="15sp"
+            android:hint="Attack Damage Value"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/SurvivabilityValue"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/AttackDamageValue">
+        </EditText>
+
+        <TextView
+            android:id="@+id/SkillEffectivenessValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="技能效果值："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AttackDamageValue">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_SkillEffectivenessValue"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="48dp"
+            android:textSize="15sp"
+            android:hint="Skill Effectiveness Value"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/AttackDamageValue"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/SkillEffectivenessValue">
+        </EditText>
+
+        <TextView
+            android:id="@+id/StartingAbilityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="上手难度值："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SkillEffectivenessValue">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_StartingAbilityValue"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:textSize="15sp"
+            android:hint="Starting Ability Value"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/SkillEffectivenessValue"
+            app:layout_constraintLeft_toRightOf="@id/StartingAbilityValue"
+            app:layout_constraintRight_toRightOf="parent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/BestPartnerHero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="最佳搭档英雄："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StartingAbilityValue">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_BestPartnerHero"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:textSize="15sp"
+            android:hint="Best Partner Hero"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/StartingAbilityValue"
+            app:layout_constraintLeft_toRightOf="@+id/BestPartnerHero"
+            app:layout_constraintRight_toRightOf="parent">
+        </EditText>
+
+        <TextView
+            android:id="@+id/SuppressHeroes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="80dp"
+            android:text="压制英雄："
+            android:textColor="#3e3e3e"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BestPartnerHero">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edit_SuppressHeroes"
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_marginRight="49dp"
+            android:textSize="15sp"
+            android:hint="Suppress Heroes"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/BestPartnerHero"
+            app:layout_constraintLeft_toRightOf="@+id/SuppressHeroes"
+            app:layout_constraintRight_toRightOf="parent">
+        </EditText>
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="保存"
+            android:background="@drawable/shape"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        </Button>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

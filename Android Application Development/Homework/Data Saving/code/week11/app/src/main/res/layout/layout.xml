@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/headshotInItem"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:src="@drawable/me"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/usernameInItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#7a7a7a"
+        android:textSize="20sp"
+        android:text="Aaron"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/headshotInItem"/>
+
+    <TextView
+        android:id="@+id/commentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#7a7a7a"
+        android:textSize="10sp"
+        android:text="2018-11-20 00:0:00"
+        android:layout_toRightOf="@id/headshotInItem"
+        android:layout_below="@id/usernameInItem"/>
+
+    <TextView
+        android:id="@+id/commentContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3e3e3e"
+        android:textSize="20sp"
+        android:text="Hello, Aaron!"
+        android:layout_toRightOf="@id/headshotInItem"
+        android:layout_below="@id/commentTime"/>
+
+    <ImageView
+        android:id="@+id/agreeImage"
+        android:layout_width="20sp"
+        android:layout_height="20sp"
+        android:src="@drawable/white"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/agreeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginTop="13dp"
+        android:text="5"
+        android:layout_toLeftOf="@id/agreeImage"/>
+
+</RelativeLayout>
