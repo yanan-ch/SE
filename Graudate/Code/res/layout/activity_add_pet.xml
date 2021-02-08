@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.archive.AddPetActivity">
+
+    <ImageView
+        android:id="@+id/addPetProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/test_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="64dp"/>
+
+    <LinearLayout
+        android:id="@+id/nameAddArea"
+        android:background="@color/colorIcons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/addPetProfile"
+        android:layout_marginTop="40dp"
+        android:paddingVertical="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondaryText"
+            android:text="Name"/>
+
+        <EditText
+            android:id="@+id/addPetName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="克洛克"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/genderAddArea"
+        android:background="@color/colorIcons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameAddArea"
+        android:layout_marginTop="4dp"
+        android:paddingVertical="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondaryText"
+            android:text="Gender"/>
+
+        <EditText
+            android:id="@+id/addPetGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="Male"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/birthAddArea"
+        android:background="@color/colorIcons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/genderAddArea"
+        android:layout_marginTop="16dp"
+        android:paddingVertical="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondaryText"
+            android:text="Birthday"/>
+
+        <EditText
+            android:id="@+id/addPetBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="2019-01-18"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weightAddArea"
+        android:background="@color/colorIcons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/birthAddArea"
+        android:layout_marginTop="16dp"
+        android:paddingVertical="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondaryText"
+            android:text="Weight"/>
+
+        <EditText
+            android:id="@+id/addPetWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="3.5kg"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recordArea"
+        android:background="@color/colorIcons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/weightAddArea"
+        app:layout_constraintBottom_toTopOf="@id/btnArea"
+        android:layout_marginTop="16dp"
+        android:paddingVertical="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondaryText"
+            android:text="Record"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="40dp"
+            android:background="@null"
+            android:textColor="@color/colorPrimaryText"
+            android:text="2019/04/06    猫三联疫苗"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/recordArea"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancelPetBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:layout_marginRight="60dp"/>
+
+        <Button
+            android:id="@+id/doneBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
