@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="../css/signUp.css">
+	<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="../js/signUpClient.js"></script>
+</head>
+<body>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+
+	<div id="bg_img">
+		<div class="up_img"></div>
+		<div class="in_img"></div>
+	</div>
+
+	<div id="textbox">
+		<div class="container">
+
+			<div class="left">
+				<div id="frame">
+					<h2>Sign Up</h2>
+					<p>Don't have an account? Sign up to save your photos.</p>
+					<form id="signup_form" name="signup_form" method="post" action="http://localhost:8000/">
+						<div class="items">
+							<label class="item_label">Username</label>
+							<input type="text" name="signup_username" id="signup_username" class="item_input" cols="50" rows="10" maxlength="18" required="required"></input>
+							<p class="error" id="nameError"></p>
+						</div>
+						<div class="items">
+							<label class="item_label">Student ID</label>
+							<input type="text" name="signup_id" id="signup_id" class="item_input" cols="50" rows="10" maxlength="8" required="required"></input>
+							<p class="error" id="idError"></p>
+						</div>
+						<div class="items">
+							<label class="item_label">Telephone</label>
+							<input type="text" name="signup_tele" id="signup_tele" class="item_input" cols="50" rows="10" maxlength="11" required="required"></input>
+							<p class="error" id="teleError"></p>
+						</div>
+						<div class="items">
+							<label class="item_label">Email</label>
+							<input type="text" name="signup_email" id="signup_email" class="item_input" cols="50" rows="10" required="required"></input>
+							<p class="error" id="emailError"></p>
+						</div>
+						<input type="submit" name="signup_submit" id="signup_submit" value="Sign Up" class="btn"/>
+					</form>
+					<button id="moveright">Sign In</button>
+				</div>
+			</div>
+
+			<div class="right">
+				<div id="frame">
+					<h2>Sign In</h2>
+					<p>Have an account? Sign in to see your photos.</p>
+					<form name="signin_form" id="signin_form" action="https://www.baidu.com/">
+						<div class="items">
+							<label class="item_label">Username</label>
+							<input type="text" name="signin_username" class=" item_input" cols="50" rows="10" required="required"></input>
+							<p class="error"></p>
+						</div>
+						<div class="items">
+							<label class="item_label">Password</label>
+							<input type="password" name="signin_password" class="item_input" cols="50" rows="10" required="required"></input>
+							<p class="error"></p>
+						</div>
+						<input type="submit" value="Sign In" class="btn"/>
+					</form>
+					<button id="moveleft">Sign Up</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<a id="refresh" value="refresh">
+    	<svg class="refreshicon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 322.447 322.447" style="enable-background:new 0 0 322.447 322.447;" xml:space="preserve">
+         	<path  d="M321.832,230.327c-2.133-6.565-9.184-10.154-15.75-8.025l-16.254,5.281C299.785,206.991,305,184.347,305,161.224c0-84.089-68.41-152.5-152.5-152.5C68.411,8.724,0,77.135,0,161.224s68.411,152.5,152.5,152.5c6.903,0,12.5-5.597,12.5-12.5c0-6.902-5.597-12.5-12.5-12.5c-70.304,0-127.5-57.195-127.5-127.5c0-70.304,57.196-127.5,127.5-127.5c70.305,0,127.5,57.196,127.5,127.5c0,19.372-4.371,38.337-12.723,55.568l-5.553-17.096c-2.133-6.564-9.186-10.156-15.75-8.025c-6.566,2.134-10.16,9.186-8.027,15.751l14.74,45.368c1.715,5.283,6.615,8.642,11.885,8.642c1.279,0,2.582-0.198,3.865-0.614l45.369-14.738C320.371,243.946,323.965,236.895,321.832,230.327z"/>
+    	</svg>
+  	</a>
+</body>
+</html>

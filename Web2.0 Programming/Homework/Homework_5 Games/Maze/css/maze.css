@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+	text-align: center;
+	color: #000000;
+	font-size: 24px;
+}
+
+#hint {
+	height: 26px;
+}
+
+#myCanvas:hover {
+	cursor: pointer;
+}
+
+#instruction {
+	text-align: left;
+	font-size: 16px;
+	width: 650px;
+	height:300px;
+	margin: auto;
+}
+
+#instruction div {
+	border: 1px #000000 solid;
+	background-color: #EDEDED;
+	width: 100px;
+	height: 25px;
+	margin: auto;
+}

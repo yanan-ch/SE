@@ -1,0 +1,143 @@
+/*link to tmnt.html*/
+body {
+	background-image: url(img/background.png);
+	font-size: 8pt;
+	font-family: Verdana,Tahoma,sans-serif;
+	margin: 0;
+	padding: 0;
+	background-repeat: repeat;
+}
+/*banner*/
+#banner {
+	background-image: url(img/bannerbackground.png);
+	background-repeat: repeat-x;
+	height: 50px;
+}
+#banner img {
+	clear: both;
+	margin: auto;
+	display: block;/*image center*/
+	height: 50px;
+}
+/*heading*/
+h1 {
+	text-align: center;
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: Tahoma, Verdana, sans-serif;
+}
+/*all content area*/
+#main {
+	display: block;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;/*block center*/
+	border-width: 4px;
+	border-color: gray;
+	border-style: solid;
+	overflow: auto;	
+}
+	/*review part*/
+	#review {
+		width: 550px;
+		float: left;
+		display: block;
+	}
+	#review_heading {
+		background-image: url(img/rottenbackground.png);
+		background-repeat: repeat-x;
+		height: 83px;
+	}
+	#review_heading img {
+		vertical-align: bottom;
+	}
+	#words_in_heading {
+		color: white;
+		font-size: 8pt;
+	}
+	#rate {
+		font-size: 48pt;
+		font-weight: bold;
+		color: red;
+	}
+
+	#left_review {
+		width: 47%;
+		float: left;
+		padding-left: 2%;
+		padding-right: 1%;
+	}
+	#right_review {
+		width: 47%;
+		float: right;
+		padding-left: 1%;
+		padding-right: 2%;
+	}
+	.review_block {
+		padding-bottom: 3em;
+	}
+	.quote {
+		background-color: #E1D697;
+		border-width: 2px;
+		border-color: gray; 
+		border-style: solid;
+		padding: 8px;
+		overflow: auto;
+	}
+	.quote img {
+		float: left;
+		margin-right: 5px;
+	}
+	.quote q {
+		font-weight: bold;
+		font-size: 8pt;
+	}
+	.quote p {
+		margin: 0;
+	}
+	.publication {
+		font-style: italic;
+	}
+	.author img {
+		border: none;
+		float: left;
+		padding-right: 5px;
+	}
+	/*general overview*/
+	#overview {
+		width: 250px;
+		float: right;
+		background-color: #A2B964;
+		font-family: Arial, sans-serif;
+		font-size: 8pt;
+		display: block;
+	}
+	dl {
+		padding: 10px;
+	}
+	#overview img {
+		border: none;
+	}
+	.term {
+		padding-bottom: 1em;
+	}
+	dt {
+		font-weight: bold;
+	}
+	/*bar*/
+	#bar {
+		clear: both;
+		background-color: #A2B964;
+	}
+	#bar p {
+		text-align: center;
+		padding: 5px;
+		margin-bottom: 0;
+	}
+/*link*/
+#w3c_link {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	border: none;
+}

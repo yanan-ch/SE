@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: "Karla", sans-serif;
+    color: #EEEEEE;
+    line-height: 35px;
+    background: #EEEEEE;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(120deg, #383745 50%, #22202B 50%);
+}
+
+.bio {
+    height: 600px;
+    width: 400px;
+    position: absolute;
+    left: 15%;
+    top: 20%;
+}
+.profile_img {
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+.bio h3 {
+    height: 40px;
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.bio p {
+    font-size: 22px;
+}
+
+.profiles {
+    height: 600px;
+    width: 400px;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    color: #CA8D6E;
+}
+
+.header {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.items {
+    font-size: 16px;
+}
+
+.info {
+    height: 30px;
+    font-size: 26px;
+}

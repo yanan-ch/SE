@@ -1,0 +1,163 @@
+* {
+	padding: 0;
+	border: none;
+	margin: 0;
+}
+html body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #222222;
+}
+
+#head {
+	text-align: center;
+	color: #bfbfbf;
+	font-size: 60px;
+	margin-top: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+ul {
+	position: relative;
+	display: block;
+	width: 410px;
+	height: 410px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.button {
+	display: inline-block;
+	color: #ffffff;
+	font-size: 25px;
+	text-align:center;
+	padding: 20px 0px;
+	margin-right: 20px;
+	height: 30px;
+	width: 170px;
+	border-radius: 10px;
+	border: 2px solid #ffffff;
+	
+	cursor: pointer;
+	background-color: #222222;
+}
+
+#play {
+	margin-left: 30%;
+}
+
+.button:active {
+	transform: translateY(3px);
+}
+
+li {
+	position: absolute;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	list-style-type: none;
+	background-size: 410px 410px;
+	transition: all 0.5s;
+}
+
+li:hover {
+	transform: scale(1.1);
+}
+
+#piece0 {
+	background-position: 0 0;
+	left: 0;
+	top: 0;
+}
+
+#piece1 {
+	background-position: -100px 0;
+	left: 25%;
+	top: 0;
+}
+
+#piece2 {
+	background-position: -200px 0;
+	left: 50%;
+	top: 0;
+}
+
+#piece3 {
+	background-position: -300px 0;
+	left: 75%;
+	top: 0;
+}
+
+#piece4 {
+	background-position: 0 -100px;
+	left: 0;
+	top: 25%;
+}
+
+#piece5 {
+	background-position: -100px -100px;
+	left: 25%;
+	top: 25%;
+}
+
+#piece6 {
+	background-position: -200px -100px;
+	left: 50%;
+	top: 25%;
+}
+
+#piece7 {
+	background-position: -300px -100px;
+	left: 75%;
+	top: 25%;
+}
+
+#piece8 {
+	background-position: 0 -200px;
+	left: 0;
+	top: 50%;
+}
+
+#piece9 {
+	background-position: -100px -200px;
+	left: 25%;
+	top: 50%;
+}
+
+#piece10 {
+	background-position: -200px -200px;
+	left: 50%;
+	top: 50%;
+}
+
+#piece11 {
+	background-position: -300px -200px;
+	left: 75%;
+	top: 50%;
+}
+
+#piece12 {
+	background-position: 0 -300px;
+	left: 0;
+	top: 75%;
+}
+
+#piece13 {
+	background-position: -100px -300px;
+	left: 25%;
+	top: 75%;
+}
+
+#piece14 {
+	background-position: -200px -300px;
+	left: 50%;
+	top: 75%;
+}
+
+#piece15 {
+	background-image: none;
+	left: 75%;
+	top: 75%;
+}

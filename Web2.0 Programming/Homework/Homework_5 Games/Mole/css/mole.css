@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	text-align: center;
+	color: #000000;
+	font-size: 24px;
+}
+#control {
+	width: 500px;
+	margin: auto;
+}
+#control div {
+	border: 1px solid;
+	margin: 10px;
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	background-color: #EDEDED;
+}
+#play:hover {
+	cursor: pointer;
+}
+#control span {
+	font-weight: bolder;
+}
+hr {
+	width: 600px;
+}
+#moles {
+	width: 600px;
+	height: 360px;
+	margin: auto;
+	padding: 0;
+}
+.moleBefore {
+	cursor: pointer;
+	margin: 10px;
+	width: 40px;
+	height: 40px;
+}
+.moleAfter {
+
+}
+#instruction {
+	width: 800px;
+	margin: auto;
+	text-align: left;
+	font-size: 18px;
+}
+#instruction p {
+	font-weight: bolder;
+	font-size: 22px;
+}

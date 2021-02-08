@@ -1,0 +1,7 @@
+
+The fill() method fills the current drawing (path).
+If the path is not closed, the fill() method will add a line from the last point to the startpoint of the path to close the path (like closePath()), and then fill the path.
+rectangle上filltext改变颜色重新fillstyle;
+text-align 可以设置canvas居中；
+script head body;
+input;

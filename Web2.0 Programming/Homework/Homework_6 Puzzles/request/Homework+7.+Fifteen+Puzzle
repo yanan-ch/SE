@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <title>Homework 7. Fifteen Puzzle - Modern Web Programming - SoYa Wiki</title>
+    
+        
+
+                        
+    
+                        
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="/wiki">
+<meta id="confluence-base-url" name="confluence-base-url" content="http://my.ss.sysu.edu.cn/wiki">
+
+<meta id="atlassian-token" name="atlassian-token" content="956b4f7a227176c74b38ddc0eb700bbb10caf648">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="WEB">
+<script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '/wiki';
+</script>
+
+    
+
+<!-- include system css resources -->
+
+
+    <link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/css/batch.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/css/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<!--[if IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/css/batch.css?conditionalComment=IE+9" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/css/batch.css?media=print" media="print">
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/6b2b2920754c128068fcb8ecd4257979/_/download/contextbatch/css/page/batch.css" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/8b2de37e35c1b0ebc4cb87df5ac34feb/_/download/contextbatch/css/plugin.quick.comment.pre/batch.css" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/d171aed0720e84a2e614f8e66074bc33/_/download/contextbatch/css/viewcontent,main/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/d171aed0720e84a2e614f8e66074bc33/_/download/contextbatch/css/viewcontent,main/batch.css" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/1/_/styles/colors.css?spaceKey=WEB" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/en_GB/3280/1/1.0/_/download/resources/com.atlassian.confluence.themes.default:styles/default-theme.css" media="all">
+
+<!-- end system css resources -->
+
+    <meta name="confluence-request-time" content="1518405885052">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+        
+            <script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset>
+            <label for="users">User name or email</label>
+            <div class="autocomplete-user-target">
+                <input class="text autocomplete-sharepage" id="users" data-max="10" data-dropdown-target=".autocomplete-user-target" data-none-message="No matching user or email found"/>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <div><label for="note">Note</label></div>
+            <textarea class="textarea" id="note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="button-panel">
+            <div class="progress-messages-icon"></div>
+            <div class="progress-messages">
+            </div>
+            <input class="button submit" type="submit" value="Share" disabled/>
+            <a class="close-dialog" href="#">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-username">
+    <li data-username="{username}" style="display: none">
+        <span>
+            <img src="{thumbnailLink.href}" title="{title}">
+            <span>{title}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="{icon}" title="{email}">
+            <span>{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+    
+        
+            <meta name="ajs-keyboardshortcut-hash" content="9ed26d2af8fe3112ef61325be869401">
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            
+    
+    
+            <meta name="ajs-page-id" content="467435525">
+            <meta name="ajs-page-title" content="Homework 7. Fifteen Puzzle">
+            <meta name="ajs-parent-page-title" content="Assignments">
+            <meta name="ajs-parent-page-id" content="450625550">
+            <meta name="ajs-space-key" content="WEB">
+            <meta name="ajs-space-name" content="Modern Web Programming">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-browse-page-tree-mode" content="view">
+            <meta name="ajs-user-display-name" content="guest">
+            <meta name="ajs-context-path" content="/wiki">
+            <meta name="ajs-version-number" content="4.2.3">
+            <meta name="ajs-build-number" content="3280">
+            <meta name="ajs-remote-user" content="guest">
+            <meta name="ajs-static-resource-url-prefix" content="/wiki/s/en_GB/3280/1/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="200485760">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="">
+            <meta name="ajs-atl-token" content="956b4f7a227176c74b38ddc0eb700bbb10caf648">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-quick.comment.resources" content="&lt;!--[if lt IE 9]&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/wiki/s/en_GB/3280/1/1f783fedef85fb32b2e08c054318f8ad/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css?conditionalComment=lt+IE+9&quot; media=&quot;all&quot;&gt;
+&lt;![endif]--&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/wiki/s/en_GB/3280/1/1f783fedef85fb32b2e08c054318f8ad/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css&quot; media=&quot;all&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/wiki/s/en_GB/3280/1/1f783fedef85fb32b2e08c054318f8ad/_/download/contextbatch/js/editor,macro-browser,-viewcontent/batch.js&quot; &gt;&lt;/script&gt;
+">
+    
+    <link rel="shortcut icon" href="/wiki/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/wiki/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch/osd.action" title="SoYa Wiki"/>
+
+        <!-- include system javascript resources -->
+                        
+    
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/js/batch.js?conditionalComment=lt+IE+9" ></script>
+<![endif]-->
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/js/batch.js" ></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/2107/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/6b2b2920754c128068fcb8ecd4257979/_/download/contextbatch/js/page/batch.js" ></script>
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/38ed33d46153870f2eb414fbd9722f06/_/download/contextbatch/js/plugin.quick.comment.hider/batch.js" ></script>
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/8b2de37e35c1b0ebc4cb87df5ac34feb/_/download/contextbatch/js/plugin.quick.comment.pre/batch.js" ></script>
+<script type="text/javascript" src="/wiki/s/en_GB/3280/1/d171aed0720e84a2e614f8e66074bc33/_/download/contextbatch/js/viewcontent,main/batch.js" ></script>
+
+    
+    <!-- end system javascript resources -->
+
+    
+
+    
+    <link rel="canonical" href="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle">
+    <link rel="shortlink" href="http://my.ss.sysu.edu.cn/wiki/x/BYDcGw">
+    <meta name="wikilink" content="[WEB:Homework 7. Fifteen Puzzle]">
+    <meta name="page-version" content="2">
+	<meta name="ajs-canonical-url" content="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle">
+
+</head>
+    
+<body             onload="placeFocus()"
+     id="com-atlassian-confluence" class="theme-default ">
+
+        
+    <ul id="assistive-skip-links" class="assistive">
+    <li><a href="#title-heading">Skip to content</a></li>
+    <li><a href="#breadcrumbs">Skip to breadcrumbs</a></li>
+    <li><a href="#header-menu-bar">Skip to header menu</a></li>
+    <li><a href="#navigation">Skip to action menu</a></li>
+    <li><a href="#quick-search-query">Skip to quick search</a></li>
+</ul>
+<div id="page">
+<div id="full-height-container">
+    <div id="header-precursor">
+        <div class="cell">
+            
+                        </div>
+    </div>
+
+    <div id="header" class="">
+    <div class="cell">
+                          
+    <form id="quick-search" class="quick-search" method="get" action="/wiki/dosearchsite.action">
+        <fieldset>
+            <label class="assistive" for="quick-search-query">Quick Search</label>
+            <input id="quick-search-query" class="quick-search-query" type="search" accessKey="q" autocomplete="off" name="queryString" size="25" title="Quick Search" />
+            <input id="quick-search-submit" class="quick-search-submit" type="submit" value="Search" />
+            <div class="aui-dd-parent quick-nav-drop-down"></div>
+        </fieldset>
+        <div class="hidden parameters">
+                                        <!-- putMetadata failed to add value for key "quick-nav-enabled" so rendering metadata inline - see server debug log for details -->
+        <meta name="ajs-quick-nav-enabled" content="true">
+                                                    </div>
+    </form>
+        <ul id="header-menu-bar" class="ajs-menu-bar">
+                        
+        
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="#"><span><span>Browse</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="browse-menu-link-leading"                 class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a  id="space-pages-link" href="/wiki/pages/listpages.action?key=WEB"  class=""   title="Browse pages in the Modern Web Programming space">
+                   <span>Pages</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-blogposts-link" href="/wiki/pages/viewrecentblogposts.action?key=WEB"  class=""   title="Browse blogs in the Modern Web Programming space">
+                   <span>Blog</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-labels-link" href="/wiki/labels/listlabels-heatmap.action?key=WEB"  class=""   title="Browse labels in the Modern Web Programming space">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-attachments-link" href="/wiki/spaces/listattachmentsforspace.action?key=WEB"  class=""   title="Browse attachments in the Modern Web Programming space">
+                   <span>Attachments</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-mail-link" href="/wiki/mail/archive/viewmailarchive.action?key=WEB"  class=""   title="Browse mail in the Modern Web Programming space">
+                   <span>Mail</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-advanced-link" href="/wiki/spaces/viewspacesummary.action?key=WEB"  class=""   title="Browse additional space functions in the Modern Web Programming space">
+                   <span>Advanced</span></a>        </li>
+                            </ul>
+                        <ul  id="browse-menu-link-global"                 class="section-global">
+                                        <li>
+    
+        
+    
+    <a  id="whats-new-menu-link" href="http://docs.atlassian.com/confluence/docs-42/whatsnew/iframe"  class=""   title="">
+                   <span>What’s New</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="people-directory-link" href="/wiki/peopledirectory.action"  class=""   title="Browse the Confluence people directory">
+                   <span>People Directory</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-directory-link" href="/wiki/spacedirectory/view.action"  class=""   title="Browse the Confluence space directory">
+                   <span>Space Directory</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="feed-builder-link" href="/wiki/dashboard/configurerssfeed.action"  class=""   title="Create your custom RSS feed.">
+                   <span>Feed Builder</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="keyboard-shortcuts-link" href="/wiki"  class=""   title="View available keyboard shortcuts">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="gadget-directory-link" href="/wiki"  class="user-item administration-link"   title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+        
+                                                                        
+            <li class="normal ajs-menu-item">
+        <a id="user-menu-link" class="user trigger ajs-menu-title" href="#"><span><span>guest</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="user-menu-link-user-preferences"                 class="section-user-preferences first">
+                                        <li>
+        
+        
+    
+    <a  id="view-personal-space-link" href="/wiki/display/~guest"  class="user-item personal-space"   title="">
+                   <span>Personal Space</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="view-user-history-link" href="/wiki/users/viewuserhistory.action"  class="user-item user-history popup-link"   title="">
+                   <span>Recently Viewed</span></a>        </li>
+                            </ul>
+                        <ul  id="user-menu-link-user-content"                 class="section-user-content">
+                                        <li>
+    
+        
+    
+    <a  id="view-user-profile-link" href="/wiki/users/viewmyprofile.action"  class="user-item user-profile"   title="">
+                   <span>Profile</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  href="/wiki/users/viewfollow.action?username=guest"  class="follow-link"   title="">
+                   <span>Network</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-favourites-link" href="/wiki/users/viewmyfavourites.action"  class="user-item"   title="">
+                   <span>Favourites</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-watches-link" href="/wiki/users/viewnotifications.action"  class="user-item"   title="">
+                   <span>Watches</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-drafts-link" href="/wiki/users/viewmydrafts.action"  class="user-item"   title="">
+                   <span>Drafts</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-settings-link" href="/wiki/users/viewmysettings.action"  class="user-item"   title="">
+                   <span>Settings</span></a>        </li>
+                            </ul>
+                        <ul  id="user-menu-link-user-operations"                 class="section-user-operations">
+                                        <li>
+    
+        
+    
+    <a  id="logout-link" href="/wiki/logout.action"  class="user-item logout-link"   title="">
+                   <span>Log Out</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+                        </ul>
+        
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first" >
+                                    <span><a href="/wiki/dashboard.action" title="Go to Dashboard">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="/wiki/display/WEB">Modern Web Programming</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>&#8230;</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb" >
+                                    <span><a href="/wiki/display/WEB/Modern+Web+Programming+Home">Modern Web Programming Home</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb" >
+                                    <span><a href="/wiki/display/WEB/Assignments">Assignments</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle">Homework 7. Fifteen Puzzle</a></span>
+                </li>
+        </ol>
+
+    </div>
+</div>
+<!-- \#header -->
+        <!-- \#header -->
+
+        
+    <div id="main" class="">
+        <div id="main-header">
+            
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                <li class="ajs-button normal">
+    
+        
+    
+    <a  id="shareContentLink" href="/wiki"  class="share"   title="Share this content by emailing other users">
+                   <span><u>S</u>hare</span></a>        </li>
+                    
+            <li class="normal ajs-menu-item">
+        <a id="add-menu-link" class="add trigger ajs-menu-title" href="#"><span><span>Add</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="add-menu-link-page"                 class="section-page first">
+                                        <li>
+    
+        
+    
+    <a  id="add-comment-menu-link" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?showComments=true&amp;showCommentArea=true#addcomment"  class="add-comment"   title="Add a Comment">
+                   <span>Comment</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+                    
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="#"><span><span>Tools</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="action-menu-link-primary"                 class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a  id="view-attachments-link" href="/wiki/pages/viewpageattachments.action?pageId=467435525"  class="action-view-attachments"  accessKey="a"  title="View Attachments">
+                   <span><u>A</u>ttachments (4)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-view-history-link" href="/wiki/pages/viewpreviousversions.action?pageId=467435525"  class="action-view-history"   title="">
+                   <span>Page History</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-page-permissions-link" href="/wiki/pages/viewinfo.action?pageId=467435525"  class="action-page-permissions"   title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                            </ul>
+                        <ul  id="action-menu-link-marker"                 class="section-marker">
+                                        <li>
+    
+        
+    
+    <a  id="page-favourite" href="/wiki/labels/addfavourite.action?entityId=467435525&amp;atl_token=956b4f7a227176c74b38ddc0eb700bbb10caf648"  class="action-page-favourite"   title="">
+                   <span>Favourite</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-watching" href="/wiki/spaces/viewspacecontent.action?key=WEB"  class="action-page-watching-space"   title="">
+                   <span>Watching Space</span></a>        </li>
+                            </ul>
+                        <ul  id="action-menu-link-secondary"                 class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a  id="view-page-info-link" href="/wiki/pages/viewinfo.action?pageId=467435525"  class="action-view-info"   title="">
+                   <span>Info</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="link-to-page-link" href="/wiki/pages/viewinfo.action?pageId=467435525"  class=""   title="Link to this Page">
+                   <span>Link to this Page&hellip;</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="view-in-hierarchy-link" href="/wiki/pages/listpages-dirview.action?key=WEB&amp;openId=467435525#selectedPageInHierarchy"  class=""   title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-view-source-link" href="/wiki/plugins/viewsource/viewpagesrc.action?pageId=467435525"  class="action-view-source popup-link"   title="">
+                   <span>View Source</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+            
+            <h1 id="title-heading" class="pagetitle">
+                                    <a href="/wiki/display/WEB"><img class="logo global custom" src="/wiki/download/attachments/131074/global.logo?version=1&amp;modificationDate=1342770530000" alt=""></a>                
+                <span id="title-text">
+                                                <a href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle">Homework 7. Fifteen Puzzle</a>
+                                    </span>
+            </h1>
+        </div><!-- \#main-header -->
+
+        
+
+        <div id="sidebar-container">
+                                                </div><!-- \#sidebar-container -->
+
+        
+    
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+        
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+
+<div id="content" class="page view">
+    
+<div id="action-messages">
+    </div>
+
+
+
+    
+<script type="text/x-template" title="movePageDialog">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Specify the new parent page for this page and its children by space and title.
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <fieldset>
+                
+
+    <legend class="assistive"><span>Change the Parent Page to a Known Page</span></legend>
+            <div class="row">
+                <label for="new-space">New space:</label>
+                <div class="value new-space-value">
+                    <input id="new-space-key" name="new-space-key" type="hidden" value="WEB">
+                                            <span class="space-input">
+                            <input id="new-space" name="new-space" value="Modern Web Programming" disabled="disabled">
+                        </span>
+                        <span class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</span>
+                                        <div class="new-space-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="new-parent-page">New parent page:</label>
+                <div class="value new-parent-page-value">
+                    <span class="page-input">
+                        <input id="new-parent-page" name="new-parent-page" value="Assignments">
+                    </span>
+                    <span class="description">Start typing a page title to see a list of suggestions.</span>
+                    <div class="new-parent-page-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="location-info">
+        <div class="row">
+            <label>Current location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="current-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label>New location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="new-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="movePageSearchPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Search for and select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-form">
+            <fieldset>
+                    
+
+    <legend class="assistive"><span>Search for a New Parent Page</span></legend>
+                    
+
+    <label  for="move-page-search-query" class="assistive">Search keywords</label>
+                <input class="search-query" id="move-page-search-query">
+                    
+
+    <label  for="move-page-search-space" class="assistive">Search in space</label>
+                                    <select id="move-page-search-space" class="search-space" disabled="disabled">
+                        <option value="WEB" selected="selected">Modern Web Programming</option>
+                    </select>
+                                <input type="button" value="Search">
+                                    <div class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</div>
+                            </fieldset>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="searchResultsGrid">
+    <table>
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <th class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></th>
+        <td class="search-result-space"><a class="space" href="/wiki/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script><!-- Start restrictions section -->
+<script type="text/x-template" title="page-permissions-div">
+<div id="page-permissions-div">
+    <div id="page-permissions-editor-form">
+
+                <div id="page-permissions-error-div" class="hidden">
+            <a href="#" id="permissions-error-div-close">Ok</a>
+            <div></div>
+        </div>
+
+                <div id="page-permissions-type-radios" class="page-permissions-label-rows">
+            <div>
+                <input id="restrictViewRadio" type="radio" checked="checked" name="pagePermissionTypeRadio" value="view"/>
+                <label for="restrictViewRadio">Restrict viewing of this page</label>
+                <input id="restrictEditRadio" type="radio" name="pagePermissionTypeRadio" value="edit"/>
+                <label for="restrictEditRadio">Restrict editing of this page</label>
+            </div>
+        </div>
+        <div id="page-permissions-input" class="page-permissions-label-rows">
+            <div class="page-permissions-label">To:</div>
+            <div id="page-permissions-chooser-box">
+                                    <span id="page-permissions-choose-me" class="ajs-button normal">
+                        <img class="permission-entity-picture" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000" border="0" alt="Me" align="absmiddle"/>
+                        <a href="#">Me</a>
+                        <span class="remote-user-name hidden">guest</span>
+                    </span>
+                                <span id="page-permissions-choose-user" class="ajs-button">
+                    
+
+
+
+    
+
+
+
+<a href="#" id='userpicker-popup-link-image' onClick="var picker = window.open('/wiki/spaces/openuserpicker.action?key=WEB&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;"><img src="/wiki/s/en_GB/3280/1/_/images/icons/user_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose users" /></a>
+<a href="#" id='userpicker-popup-link-text' onClick="var picker = window.open('/wiki/spaces/openuserpicker.action?key=WEB&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;">Person...</a>
+
+
+                </span>
+                <span id="page-permissions-choose-group" class="ajs-button">
+                    
+
+
+
+    
+
+ 
+
+<a href="#" id='grouppicker-popup-link-image' onClick="var picker = window.open('/wiki/spaces/opengrouppicker.action?key=WEB&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;"><img src="/wiki/s/en_GB/3280/1/_/images/icons/group_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose groups" /></a>
+<a href="#" id='grouppicker-popup-link-text' onClick="var picker = window.open('/wiki/spaces/opengrouppicker.action?key=WEB&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;">Group...</a>
+
+
+                </span>
+            </div>
+            <div id="page-permissions-input-box">
+                <input type="text" id="page-permissions-names-input" name="permissionNames"
+                    placeholder="Enter user or group name" class="autocomplete-user"
+                    data-max="10" data-none-message="No matches"
+                    data-target="#page-permissions-names-hidden" data-template="{username}"
+                    data-dropdown-target="#page-perms-name-dropdown-wrapper" data-resize-to-input="true"
+                    size="30"/>
+                <input
+    type="hidden"
+                            id="page-permissions-names-hidden"           />                <img height="16px" width="1px" src="/wiki/s/en_GB/3280/1/_/images/border/spacer.gif"/>
+                <input type="button" id="add-typed-names" value="Restrict">
+                <div id="page-perms-name-dropdown-wrapper" class="aui-dd-parent autocomplete"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-permissions-tables">
+        <div id="page-permissions-table-div">
+                        <table id="page-permissions-table" class="page-permissions-table">
+                <tr id="page-permissions-no-views" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No view restrictions are defined for this page</span></td>
+                </tr>
+                <tr id="page-permissions-no-edits" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No edit restrictions are defined for this page</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page-inherited-permissions-table-div" class="hidden">
+            <span id="page-inherited-permissions-table-desc">
+                <a class="icon twisty-closed">Show/Hide</a>
+                <a id="toggle-inherited-permissions" title="Click to see inherited restrictions">This page has restricted parent pages. It can only be seen by users who can see those parent pages.</a>
+            </span>
+            <div id="page-inherited-permissions-tables" class="hidden page-inheritance-togglable"></div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- End restrictions section -->
+
+        
+    
+    
+        
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+    
+            
+    
+    <a  id="content-metadata-page-restrictions" href="#"  class="page-metadata-icon page-restrictions hidden"   title="Page restrictions apply. Click the lock icon to view or edit the restriction.">
+                   <span>Page restrictions apply</span></a>        </li>
+                            <li class="page-metadata-item noprint">
+    
+        
+    
+    <a  id="content-metadata-attachments" href="/wiki/pages/viewpageattachments.action?pageId=467435525&amp;metadataLink=true"  class="page-metadata-icon action-view-attachments"  accessKey="a"  title="Attachments: 4">
+                   <span><span class="page-metadata-attachments-text">Attachments:</span><span class="page-metadata-attachments-count">4</span></span></a>        </li>
+                        <li class="page-metadata-modification-info">
+                                    Added by <a href="/wiki/display/~wangqing"
+                          class="url fn confluence-userlink" data-username="wangqing"
+                   >王青</a>, last edited by <a href="/wiki/display/~wangqing"
+                          class="url fn confluence-userlink" data-username="wangqing"
+                   >王青</a> on Nov 15, 2015
+                                                                <span class="noprint">&nbsp;(<a id="view-change-link" href="/wiki/pages/diffpages.action?pageId=467435525&originalId=467435527">view change</a>)</span>
+                                                </li>
+                    </ul>
+                </div>
+
+
+<a href="#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+        
+                                
+        <div id="main-content" class="wiki-content">
+                           <h1 id="Homework7FifteenPuzzle-题目一中级JavaScript练习">题目一 中级JavaScript练习</h1><p>完成<a href="http://ejohn.org/apps/learn" class="external-link" rel="nofollow">http://ejohn.org/apps/learn</a> 中的题目，<span>结合</span><a href="/wiki/display/WEB/Lecture+07.+Intermediate+JavaScript">&#35838;&#31243;&#20869;&#23481;</a><span>，认真思考，弄清楚每一个问题。<span>不清楚、不明白之处，</span>一个都不要忽视，一个都不要放过，互相讨论、问TA、问老师，全部弄清楚为止。</span></p><p><span><strong>本题目<span style="color: rgb(255,0,0);">不计分</span></strong>。</span></p><p>虽然不计分，但是<span style="color: rgb(0,0,255);"><strong>这些题目对大家理解JavaScript的语言特点，掌握好这门语言，十分重要</strong></span>。</p><p>如果能够全部弄清楚，后面的学习将事半功倍。否则，后面会十分吃力。</p><h1 id="Homework7FifteenPuzzle-题目二FifteenPuzzle">题目二 Fifteen Puzzle</h1><p>制作网页实现下面的拼图游戏</p><p><img class="confluence-embedded-image" confluence-query-params="effects=drop-shadow" src="/wiki/download/attachments/467435525/image2015-11-15+15%3A59%3A55.png?version=1&amp;modificationDate=1447574961000&amp;effects=drop-shadow" data-image-src="/wiki/download/attachments/467435525/image2015-11-15+15%3A59%3A55.png?version=1&amp;modificationDate=1447574961000&amp;effects=drop-shadow"></p><p>其交互过程如下：</p><p><div class="embeddedObject" >
+    <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="https://www.apple.com/qtactivex/qtplugin.cab" data="/wiki/download/attachments/467435525/puzzle.mp4" height="450" type="video/mp4" width="800">
+                <param name="autostart" value="false">
+                     <param name="autoplay" value="false">
+                     <param name="controller" value="true">
+                     <param name="data" value="/wiki/download/attachments/467435525/puzzle.mp4">
+                     <param name="src" value="/wiki/download/attachments/467435525/puzzle.mp4">
+                     <param name="type" value="video/mp4">
+                 <embed autostart="false" autoplay="false" controller="true" height="450" src="/wiki/download/attachments/467435525/puzzle.mp4" type="video/mp4" width="800">
+    </embed>
+                        </object>
+
+</div>
+</p><p>熊猫底图：<a href="/wiki/download/attachments/467435525/panda.jpg?version=2&amp;modificationDate=1447574961000">panda.jpg</a></p><h2 id="Homework7FifteenPuzzle-需求规格（80分）">需求规格（80分）</h2><ol><li>UI（10分）：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI（可用其它图片）。</li><li>正常移动（20分）：点击空白旁边的图块，图块移到空白处。点击其它图块，不会移动。</li><li>图块图片正常（20分）：无论如何移动，每个图块上的图片都保持不变。</li><li>拼图结束（10分）：当拼回原图时，提示用户游戏获胜。</li><li>重新开始（10分）：点击重新开始，打乱、重新洗牌。</li><li>增加趣味性（10分）：发挥想象力，增加内容或者功能，让游戏更加好玩。</li></ol><h2 id="Homework7FifteenPuzzle-软件质量要求（20分）"><span>软件质量要求（20分）</span></h2><p>SoC：（5分）正确运用适当的语言分别定义网页的内容、外观和行为，没有侵入式代码</p><p>HTML代码符合课程要求（5分）</p><p>CSS代码符合课程要求（5分）</p><p>JavaScript代码符合课程要求（5分）</p>
+    
+        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/467435525"/>
+</rdf:RDF>
+-->
+
+                    <script type="text/x-template" title="labels-dialog-div">
+        <div id="labels-dialog">
+        <div class="labels-editor">
+            <form method="GET" action="" id="add-labels-form">
+                <div id="labelOperationErrorContainer">
+                    <span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span>
+                </div>
+    
+                <div id="label-input-fields">
+                    <input autocomplete="off" id="labelsString" name="labelsString" value="">
+                    <input id="add-labels-editor-button" type="submit" class="add-labels" value="Add">
+                </div>
+                <div id="labelsAutocompleteList" class="aui-dd-parent resize-to-input" style="width: 417px"></div>
+                <div id="dialog-label-list">
+                    <!-- DIV placeholder for labels list, is copied into in labels-dialog.js -->
+                </div>
+                <div id="waitImageAndStatus">
+                    <img class="waiting" alt="Please wait" src="/wiki/s/en_GB/3280/1/_/images/icons/wait.gif">&nbsp;
+                    <span id="labelOperationStatus" class="smalltext"></span>
+                </div>
+                <div class="labels-tip"></div>
+            </form>
+        </div>
+        <div style="display: none;">
+            <div class="labels-section-content content-column"
+    	    		entityid="467435525" entitytype="Page"
+    		>
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+                <li class="labels-edit-container"><a href="#" class="show-labels-editor editor-icon" title="Edit Labels">
+            <span class="icon icon-edit">Edit Labels</span>
+        </a></li>
+    </ul>
+    </div>
+</div>        </div>
+    </div>
+</script>
+                
+    
+
+
+<div id="labels-section" class="pageSection group">
+    <div class="labels-editor">
+        <span id="labels-section-title" class="label-title">Labels</span>
+        <div class="labels-section-content content-column"
+    	    		entityid="467435525" entitytype="Page"
+    		>
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+                <li class="labels-edit-container"><a href="#" class="show-labels-editor editor-icon" title="Edit Labels">
+            <span class="icon icon-edit">Edit Labels</span>
+        </a></li>
+    </ul>
+    </div>
+</div>    </div>
+</div>
+        
+                    <div id="children-section" class="pageSection children-showing group">
+                
+        <div class="section-header ">
+            <h2 id="children-section-title" class="section-title">
+                <a href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?showChildren=false#children" class="children-show-hide">
+                                            1 Child Page
+                                    </a>
+            </h2>
+
+            <a href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?showChildren=false#children" class="children-show-hide icon"></a>
+            <!--
+            <span class="noprint grey">
+                <a class="children-subtitle" href="/wiki/pages/listpages-dirview.action?key=WEB&amp;openId=467435525#selectedPageInHierarchy">Reorder Pages</a>
+                            </span>
+            -->
+        </div>
+        <div id="page-children" class="pageSectionBody children-loaded">
+                                        <span class="child-display">
+                                 <span class="icon icon-page" title="Page">Page:</span>                 <a href="/wiki/display/WEB/Homework+7+Highlights">Homework 7 Highlights</a>
+                         </span>
+                                </div>
+        </div>
+    
+            
+
+
+
+
+            
+    
+
+
+
+
+
+
+
+
+<div id="comments-section" class="pageSection group">
+            <div class="section-header ">
+            <h2 id="comments-section-title" class="section-title">
+                <a href="#" class="comments-show-hide comments-showing" name="comments">
+                                            17 Comments
+                                    </a>
+            </h2>
+            <a title="Hide/Show Comments" href="#" 
+               class="comments-show-hide icon comments-showing icon-section-opened">
+                Hide/Show Comments
+            </a>
+        </div>    
+    
+    
+                            <ol class="comment-threads top-level " id="page-comments">
+                        <li id="comment-thread-547422214" class="comment-thread">
+                                <div class="comment  " id="comment-547422214">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 19, 2016 17:11">
+                    Oct 19, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>可以用css的transition么？？</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422214#comment-547422214"
+                id="comment-permalink-547422214"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=547422214&amp;pageId=467435525"
+                id="edit-comment-547422214"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=547422214&amp;pageId=467435525"
+                id="reply-comment-547422214"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422214#comment-547422214"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422214#comment-547422214"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/547422214"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-547422219" class="comment-thread">
+                                <div class="comment  " id="comment-547422219">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="wangqing" href="/wiki/display/~wangqing">
+               <img class="userLogo logo" src="/wiki/download/attachments/458753/wangqing-54544-pp-bighead_1_cv.jpg?version=1&amp;modificationDate=1405928254000"
+               alt="User icon: wangqing" title="wangqing">
+           </a>                </p>
+                <p class="date" title="Oct 19, 2016 18:58">
+                    Oct 19, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~wangqing"
+                          class="url fn confluence-userlink" data-username="wangqing"
+                   >王青</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>当然可以 <img class="emoticon emoticon-smile" src="/wiki/s/en_GB/3280/1/_/images/icons/emoticons/smile.png" data-emoticon-name="smile" alt="(smile)" /></p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422219#comment-547422219"
+                id="comment-permalink-547422219"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=547422219&amp;pageId=467435525"
+                id="reply-comment-547422219"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422219#comment-547422219"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422219#comment-547422219"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/547422219"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                        <li id="comment-thread-547422217" class="comment-thread">
+                                <div class="comment  " id="comment-547422217">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 19, 2016 18:48">
+                    Oct 19, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>作业一什么意思？扔了一堆代码，看不懂，然后呢？好像并没有相关的解释</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422217#comment-547422217"
+                id="comment-permalink-547422217"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=547422217&amp;pageId=467435525"
+                id="edit-comment-547422217"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=547422217&amp;pageId=467435525"
+                id="reply-comment-547422217"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422217#comment-547422217"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422217#comment-547422217"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/547422217"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-547422218" class="comment-thread">
+                                <div class="comment  " id="comment-547422218">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="wangqing" href="/wiki/display/~wangqing">
+               <img class="userLogo logo" src="/wiki/download/attachments/458753/wangqing-54544-pp-bighead_1_cv.jpg?version=1&amp;modificationDate=1405928254000"
+               alt="User icon: wangqing" title="wangqing">
+           </a>                </p>
+                <p class="date" title="Oct 19, 2016 18:58">
+                    Oct 19, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~wangqing"
+                          class="url fn confluence-userlink" data-username="wangqing"
+                   >王青</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>先复习上课的内容，真正开动大脑去理解老师上课讲的内容，再结合这个来练习。</p><p>掌握知识最终依靠的一定是自己认真动脑的学习，特别是有价值的知识，都来之不易，切勿急躁！</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422218#comment-547422218"
+                id="comment-permalink-547422218"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=547422218&amp;pageId=467435525"
+                id="reply-comment-547422218"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422218#comment-547422218"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547422218#comment-547422218"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/547422218"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                        <li id="comment-thread-547913738" class="comment-thread">
+                                <div class="comment  " id="comment-547913738">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 21, 2016 16:04">
+                    Oct 21, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>随机打乱后用不用保证一定能复原？？？</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547913738#comment-547913738"
+                id="comment-permalink-547913738"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=547913738&amp;pageId=467435525"
+                id="edit-comment-547913738"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=547913738&amp;pageId=467435525"
+                id="reply-comment-547913738"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547913738#comment-547913738"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=547913738#comment-547913738"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/547913738"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-548110339" class="comment-thread">
+                                <div class="comment  " id="comment-548110339">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="wangqing" href="/wiki/display/~wangqing">
+               <img class="userLogo logo" src="/wiki/download/attachments/458753/wangqing-54544-pp-bighead_1_cv.jpg?version=1&amp;modificationDate=1405928254000"
+               alt="User icon: wangqing" title="wangqing">
+           </a>                </p>
+                <p class="date" title="Oct 22, 2016 11:41">
+                    Oct 22, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~wangqing"
+                          class="url fn confluence-userlink" data-username="wangqing"
+                   >王青</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>保证？？  会有无法复原的情况？？？？   </p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110339#comment-548110339"
+                id="comment-permalink-548110339"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548110339&amp;pageId=467435525"
+                id="reply-comment-548110339"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110339#comment-548110339"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110339#comment-548110339"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548110339"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-548110340" class="comment-thread">
+                                <div class="comment  " id="comment-548110340">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 22, 2016 11:55">
+                    Oct 22, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>有这样的情况的 <a href="http://www.baike.com/wiki/%E4%B8%8D%E5%8F%AF%E8%BF%98%E5%8E%9F%E7%9A%84%E6%8B%BC%E5%9B%BE" class="external-link" rel="nofollow">http://www.baike.com/wiki/%E4%B8%8D%E5%8F%AF%E8%BF%98%E5%8E%9F%E7%9A%84%E6%8B%BC%E5%9B%BE</a></p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110340#comment-548110340"
+                id="comment-permalink-548110340"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=548110340&amp;pageId=467435525"
+                id="edit-comment-548110340"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548110340&amp;pageId=467435525"
+                id="reply-comment-548110340"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110340#comment-548110340"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110340#comment-548110340"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548110340"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-548503556" class="comment-thread">
+                                <div class="comment  " id="comment-548503556">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="wangqing" href="/wiki/display/~wangqing">
+               <img class="userLogo logo" src="/wiki/download/attachments/458753/wangqing-54544-pp-bighead_1_cv.jpg?version=1&amp;modificationDate=1405928254000"
+               alt="User icon: wangqing" title="wangqing">
+           </a>                </p>
+                <p class="date" title="Oct 23, 2016 14:58">
+                    Oct 23, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~wangqing"
+                          class="url fn confluence-userlink" data-username="wangqing"
+                   >王青</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <ol><li>对哦，前面的回答，老师大意了，的确是会有这样的情况，受教了 <img class="emoticon emoticon-smile" src="/wiki/s/en_GB/3280/1/_/images/icons/emoticons/smile.png" data-emoticon-name="smile" alt="(smile)" />。</li><li>不过，题目本身没错。题目只是说洗牌，并未说“随机打乱”。</li><li>最后，需求规格是题目考核的标准，只要满足规格，其余内容均可自便。</li></ol><p> </p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548503556#comment-548503556"
+                id="comment-permalink-548503556"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548503556&amp;pageId=467435525"
+                id="reply-comment-548503556"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548503556#comment-548503556"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548503556#comment-548503556"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548503556"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                                </ol>
+                        </li>
+                                </ol>
+                        </li>
+                        <li id="comment-thread-548110344" class="comment-thread">
+                                <div class="comment  " id="comment-548110344">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Sep 19, 2017 21:23">
+                    Sep 19, 2017
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>明白了.</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110344#comment-548110344"
+                id="comment-permalink-548110344"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=548110344&amp;pageId=467435525"
+                id="edit-comment-548110344"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548110344&amp;pageId=467435525"
+                id="reply-comment-548110344"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110344#comment-548110344"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110344#comment-548110344"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548110344"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-548110345" class="comment-thread">
+                                <div class="comment  " id="comment-548110345">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 22, 2016 16:29">
+                    Oct 22, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>js也是有数据类型的</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110345#comment-548110345"
+                id="comment-permalink-548110345"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=548110345&amp;pageId=467435525"
+                id="edit-comment-548110345"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548110345&amp;pageId=467435525"
+                id="reply-comment-548110345"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110345#comment-548110345"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110345#comment-548110345"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548110345"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                        <li id="comment-thread-548110346" class="comment-thread">
+                                <div class="comment  " id="comment-548110346">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 22, 2016 16:45">
+                    Oct 22, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p style="text-align: left;">           课件原话：</p><ol><li style="text-align: left;"><span>只有数字字面表达（ <span>number literal<span>） 和<span>undefined<span>不是对象</span></span></span></span></span></li><li style="text-align: left;"><span><span><span><span><span>JavaScript 的对象在使用中传递的都是引用，没有传值。即复制传递的方式。</span></span></span></span></span><br /><br />希望对你有用。<br /><br /></li></ol>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110346#comment-548110346"
+                id="comment-permalink-548110346"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=548110346&amp;pageId=467435525"
+                id="edit-comment-548110346"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548110346&amp;pageId=467435525"
+                id="reply-comment-548110346"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110346#comment-548110346"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110346#comment-548110346"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548110346"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-548110348" class="comment-thread">
+                                <div class="comment  " id="comment-548110348">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Oct 22, 2016 22:43">
+                    Oct 22, 2016
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>明白了，谢谢你</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110348#comment-548110348"
+                id="comment-permalink-548110348"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=548110348&amp;pageId=467435525"
+                id="edit-comment-548110348"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=548110348&amp;pageId=467435525"
+                id="reply-comment-548110348"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110348#comment-548110348"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=548110348#comment-548110348"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/548110348"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                        <li id="comment-thread-591888385" class="comment-thread">
+                                <div class="comment  " id="comment-591888385">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Nov 09, 2017 20:57">
+                    Nov 09, 2017
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>额,感觉越来越难了</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=591888385#comment-591888385"
+                id="comment-permalink-591888385"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=591888385&amp;pageId=467435525"
+                id="edit-comment-591888385"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=591888385&amp;pageId=467435525"
+                id="reply-comment-591888385"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=591888385#comment-591888385"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=591888385#comment-591888385"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/591888385"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                        <li id="comment-thread-591986689" class="comment-thread">
+                                <div class="comment  " id="comment-591986689">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Nov 10, 2017 15:18">
+                    Nov 10, 2017
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>随机打乱的话有50%的可能性不可能还原。拼图游戏能还原有一个很简洁的充要条件，见此文：<a href="http://www.cppblog.com/lemene/archive/2007/10/04/33405.html" class="external-link" rel="nofollow">http://www.cppblog.com/lemene/archive/2007/10/04/33405.html</a></p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=591986689#comment-591986689"
+                id="comment-permalink-591986689"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=591986689&amp;pageId=467435525"
+                id="edit-comment-591986689"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=591986689&amp;pageId=467435525"
+                id="reply-comment-591986689"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=591986689#comment-591986689"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=591986689#comment-591986689"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/591986689"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-592543746" class="comment-thread">
+                                <div class="comment  " id="comment-592543746">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Nov 13, 2017 20:34">
+                    Nov 13, 2017
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>4*4的时候,如果最后只有11与15调转了呢?</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543746#comment-592543746"
+                id="comment-permalink-592543746"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=592543746&amp;pageId=467435525"
+                id="edit-comment-592543746"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=592543746&amp;pageId=467435525"
+                id="reply-comment-592543746"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543746#comment-592543746"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543746#comment-592543746"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/592543746"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-592543747" class="comment-thread">
+                                <div class="comment  " id="comment-592543747">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Nov 13, 2017 21:46">
+                    Nov 13, 2017
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>能还原的充分必要条件是始态和终态的（排列逆序数+空白格的纵坐标+空白格的横坐标）的奇偶性相同。 1 2 3 4; 5 6 7 8; 9 10 15 12; 13 14 11 0 的判别值为偶数，而目标状态<span> 1 2 3 4; 5 6 7 8; 9 10 11 12; 13 14 15 0 判别值为奇数，故此种情况下无法复原。</span></p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543747#comment-592543747"
+                id="comment-permalink-592543747"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=592543747&amp;pageId=467435525"
+                id="edit-comment-592543747"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=592543747&amp;pageId=467435525"
+                id="reply-comment-592543747"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543747#comment-592543747"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543747#comment-592543747"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/592543747"/>
+</rdf:RDF>
+-->
+
+                    
+                                    <ol class="comment-threads">
+                                        <li id="comment-thread-592543748" class="comment-thread">
+                                <div class="comment  " id="comment-592543748">
+                <p class="comment-user-logo">
+                    <a  class="userLogoLink" data-username="guest" href="/wiki/display/~guest">
+               <img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000"
+               alt="User icon: guest" title="guest">
+           </a>                </p>
+                <p class="date" title="Nov 13, 2017 22:09">
+                    Nov 13, 2017
+                </p>
+                <div class="comment-header">
+                    <h4 class="author"><a href="/wiki/display/~guest"
+                          class="url fn confluence-userlink" data-username="guest"
+                   >guest</a></h4>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-content wiki-content">
+                        <p>谢谢。</p>
+                    </div>
+                    <div class="comment-actions">
+                                                      <ul class="comment-actions-secondary">
+                                                          <li class="first comment-permalink">
+            <a title="Permanent link to this comment" href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543748#comment-592543748"
+                id="comment-permalink-592543748"                ><span>Permalink</span></a></li>
+            </ul>
+                                <ul class="comment-actions-primary">
+                                                          <li class="first comment-action-edit">
+            <a  href="/wiki/pages/editcomment.action?commentId=592543748&amp;pageId=467435525"
+                id="edit-comment-592543748"                ><span>Edit</span></a></li>
+                                                          <li class=" action-reply-comment">
+            <a  href="/wiki/pages/replycomment.action?commentId=592543748&amp;pageId=467435525"
+                id="reply-comment-592543748"                ><span>Reply</span></a></li>
+            </ul>
+                      </div>
+                </div>
+            </div>
+
+            <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543748#comment-592543748"
+    dc:identifier="http://my.ss.sysu.edu.cn/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?focusedCommentId=592543748#comment-592543748"
+    dc:title="Homework 7. Fifteen Puzzle"
+    trackback:ping="http://my.ss.sysu.edu.cn/wiki/rpc/trackback/592543748"/>
+</rdf:RDF>
+-->
+
+                    
+                                </li>
+                                </ol>
+                        </li>
+                                </ol>
+                        </li>
+                                </ol>
+                        </li>
+                </ol>
+    
+            <div class="bottom-comment-panels comment-panels">
+                                    
+    
+
+                    
+    
+
+
+    
+
+<div class="quick-comment-container comment add"><p class="comment-user-logo"><a class="userLogoLink" data-username="guest" href="/wiki/display/~guest"><img class="userLogo logo" src="/wiki/download/attachments/3441008/2aef8694a4c27d1e4e103f151cd5ad6edcc43879.jpg?version=1&amp;modificationDate=1466839102000" alt="User icon: guest" title="guest"></a></p><div class="quick-comment-vertical-spacer"></div><div class="quick-comment-body"><div class="quick-comment-loading-container" style="display:none;"><p class="quick-comment-loading-message">Loading the Editor</p></div><form style="display:block;" class="quick-comment-form" method="post" name="inlinecommentform" action="/wiki/pages/doaddcomment.action?pageId=467435525" ><div title="Add a Comment" class="quick-comment-prompt"><span>Write a comment…</span></div></form></div></div>
+
+            </div>
+    
+                        <div id="comments-actions" class="aui-toolbar noprint">
+                <p class="toolbar-group">
+                    <span class="toolbar-item"><a href="/wiki/display/WEB/Homework+7.+Fifteen+Puzzle?showComments=true&amp;showCommentArea=true#addcomment" id="add-comment-rte" accesskey="m" class="toolbar-trigger">Add Comment</a></span>
+                </p>
+            </div>
+            </div>
+
+
+            
+</div>
+
+
+    
+
+
+
+    
+    
+
+    
+    
+    
+
+
+    
+
+
+
+        <br class="clear">
+    </div><!-- \#main -->
+    
+    
+        
+            <div id="footer">
+                                                <p class="license license-community">
+                  Powered by a free <b>Atlassian Confluence Community License</b> granted to School of Software, Sun Yat-sen University. <a href="http://www.atlassian.com/c/conf/11460">Evaluate Confluence today</a>.<br>
+                </p>
+                        
+    <ul id="poweredby">
+        <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a> <span id='footer-build-information'>4.2.3</span>, the <a href="http://www.atlassian.com/software/confluence/tour/enterprise-wiki.jsp" class="hover-footer-link">Enterprise Wiki</a></li>
+        <li class="print-only">Printed by Atlassian Confluence 4.2.3, the Enterprise Wiki.</li>        
+        <li class="noprint"> &nbsp;&middot;&nbsp; <a href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="hover-footer-link">Report a bug</a></li>
+        <li class="noprint"> &nbsp;&middot;&nbsp; <a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="hover-footer-link">Atlassian News</a></li>
+    </ul>
+
+            
+    </div>
+    
+</div><!-- \#full-height-container -->
+</div><!-- \#page -->
+</body>
+</html>
