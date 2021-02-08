@@ -1,0 +1,38 @@
+;通过while循环，每执行一次，v中1的数目就会减少1，如果v中1的数目为奇数，则parity=true，否则parity=false
+DATA SEGMENT
+SOURCE  DB 'Hello world','$'
+COUNT EQU $-SOURCE
+DATA ENDS
+EXTRA SEGMENT
+DEST DB COUNT DUP ('$')
+EXTRA ENDS
+CODE SEGMENT
+ASSUME CS:CODE, DS:DATA
+BEGIN:
+  MOV AX,DATA
+  MOV DS,AX
+  LEA SI,SOURCE
+  MOV AX,EXTRA
+  MOV ES,AX
+  LEA DI,DEST
+  MOV CX,COUNT
+  ADD CX,-01H
+  AG:
+    LODSB
+  AND AL,07FH;0111,1111
+  ;MOV AL,30H
+    JNP NEXT;低八位1的个数为偶数，则PF置1，否则置0，如果PF为1，则JP跳转指令可以跳转到目标位置 JNP相反
+  OR AL,80H
+  ;MOV AL,31H
+  NEXT:
+    STOSB
+    LOOP AG
+  ;MOV AX,EXTRA
+  ;MOV DS,AX
+  ;LEA DX,DEST
+  ;MOV AH,09H
+  ;INT 21H
+  MOV AH,4CH
+  INT 21H
+CODE ENDS
+END BEGIN

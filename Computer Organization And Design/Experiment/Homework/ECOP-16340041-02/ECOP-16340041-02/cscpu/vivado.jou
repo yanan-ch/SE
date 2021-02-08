@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue May 29 15:43:47 2018
+# Process ID: 6348
+# Current directory: D:/Chen Yanan/Computer Organization and Design Experiment/Homework/ECOP-16340041-02/ECOP-16340041-02/cscpu
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7756 D:\Chen Yanan\Computer Organization and Design Experiment\Homework\ECOP-16340041-02\ECOP-16340041-02\cscpu\cscpu.xpr
+# Log file: D:/Chen Yanan/Computer Organization and Design Experiment/Homework/ECOP-16340041-02/ECOP-16340041-02/cscpu/vivado.log
+# Journal file: D:/Chen Yanan/Computer Organization and Design Experiment/Homework/ECOP-16340041-02/ECOP-16340041-02/cscpu\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Chen Yanan/Computer Organization and Design Experiment/Homework/ECOP-16340041-02/ECOP-16340041-02/cscpu/cscpu.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source CPUSIM.tcl
+restart
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+restart
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+close_sim
