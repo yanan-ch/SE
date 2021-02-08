@@ -1,0 +1,28 @@
+Vivado Simulator 2015.3
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2015.3/bin/unwrapped/win64.o/xelab.exe -wto d4d2919c14de4f858504e2b4711208fc --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ALU_1_wrapper_behav xil_defaultlib.ALU_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decode138
+Compiling module xil_defaultlib.ALU_1_decode138_0_0
+Compiling module xil_defaultlib.four_2_input_and_gate
+Compiling module xil_defaultlib.ALU_1_four_2_input_and_gate_0_0
+Compiling module xil_defaultlib.four_2_input_or_gate
+Compiling module xil_defaultlib.ALU_1_four_2_input_or_gate_0_0
+Compiling module xil_defaultlib.mux_8_to_1
+Compiling module xil_defaultlib.ALU_1_mux_8_to_1_0_0
+Compiling module xil_defaultlib.ALU_1_mux_8_to_1_1_0
+Compiling module xil_defaultlib.six_not_gate
+Compiling module xil_defaultlib.ALU_1_six_not_gate_0_0
+Compiling module xil_defaultlib.xup_nand4
+Compiling module xil_defaultlib.ALU_1_xup_nand4_0_0
+Compiling module xil_defaultlib.ALU_1_xup_nand4_1_0
+Compiling module xil_defaultlib.ALU_1_xup_nand4_2_0
+Compiling module xil_defaultlib.ALU_1
+Compiling module xil_defaultlib.ALU_1_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot ALU_1_wrapper_behav
